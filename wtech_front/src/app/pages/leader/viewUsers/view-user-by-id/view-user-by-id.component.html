@@ -1,0 +1,32 @@
+<div>
+    <button mat-raised-button (click)="closeUser()" style="background-color:#E1BEE7; border-color: #E1BEE7;">Close</button>
+    <mat-card style="padding-bottom: 2%">
+      <h3 style="padding-top: 25px;color:#BA68C8; font-size: 25px;font-family: 'Oleo Script', cursive;"fxLayoutAlign="center">User Details</h3>
+      <table id="detailsTable">
+        <tr>
+          <td>Name:</td>
+          <td>{{user.name}}</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <td>Contact No.:</td>
+          <td>{{user.contactNo}}</td>
+        </tr>
+        <tr>
+          <td>Skill:</td>
+          <td>{{user.skillId}}</td>
+        </tr>
+        <tr>
+          <td>Industry:</td>
+          <td>{{user.industryId}}</td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td>{{user.locationId}}</td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>

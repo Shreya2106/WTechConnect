@@ -1,0 +1,37 @@
+.example-spacer {
+    flex: 1 1 auto;
+    padding-right: 3%;
+  }
+  
+  .example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  h2,h4{
+    color:#BA68C8;
+    font-family: 'Oleo Script', cursive;
+    text-align: center;
+  }
+  
+  .split-right{
+    width: 35%;
+    height:40%;
+    padding-right: 5%;
+    align-content: flex-end;
+  }
+  
+  .split-left{
+    width: 80%;
+    align-content: center;
+  }
+  
+  #main{
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  

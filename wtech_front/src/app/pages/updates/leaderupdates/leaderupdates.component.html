@@ -1,0 +1,19 @@
+<span>
+    <h4 style="padding-top: 5%;padding-left: 5%;">ALL OF YOUR UPDATES</h4>&nbsp;&nbsp;&nbsp;
+    <button *ngIf="!none" mat-button (click)="seen()" style="background-color:#E1BEE7; border-color: #E1BEE7;">Close All</button>
+  </span>
+  <mat-card>
+  <div mat-dialog-content *ngIf="!none">
+    <div  *ngFor="let n of notifs">
+    <table>
+      <tr>{{n}}</tr>
+    </table><br>
+  </div>
+  </div>
+  <div mat-dialog-content *ngIf="none">
+    <h3>NO UPDATES!!</h3>
+  </div>
+  </mat-card>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close style="background-color:#E1BEE7; border-color: #E1BEE7;">Close</button>
+  </div>

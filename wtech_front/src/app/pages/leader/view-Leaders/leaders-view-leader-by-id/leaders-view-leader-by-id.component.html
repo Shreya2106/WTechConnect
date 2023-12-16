@@ -1,0 +1,32 @@
+<div>
+    <button mat-raised-button (click)="closeLead()" style="background-color:#E1BEE7; border-color: #E1BEE7;">Close</button>
+    <mat-card style="padding-bottom: 2%">
+      <h3 style="padding-top: 25px;color:#BA68C8; font-size: 25px;font-family: 'Oleo Script', cursive;"fxLayoutAlign="center">Leader Details</h3>
+      <table id="detailsTable">
+        <tr>
+          <td>Name:</td>
+          <td>{{lead.leaderName}}</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{lead.email}}</td>
+        </tr>
+        <tr>
+          <td>Contact No.:</td>
+          <td>{{lead.contactNo}}</td>
+        </tr>
+        <tr>
+          <td>Skill:</td>
+          <td>{{lead.skillId}}</td>
+        </tr>
+        <tr>
+          <td>Industry:</td>
+          <td>{{lead.industryId}}</td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td>{{lead.locationId}}</td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>

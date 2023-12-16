@@ -1,0 +1,16 @@
+#main{
+    align-content: center;
+    text-align: center;
+  }
+  table{
+    background-color:rgb(201, 135, 245);
+    width: 90%;
+  }
+  td{
+    text-align: center;
+    width: 20%;
+  }
+  h2,h4{
+    color:#BA68C8;
+    font-family: 'Oleo Script', cursive;
+  }

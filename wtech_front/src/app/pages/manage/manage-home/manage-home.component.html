@@ -1,0 +1,23 @@
+<!-- Toolbar -->
+<mat-toolbar style="background-color: #E1BEE7;">
+    <img src="assets/cliparts/logo1.jpg" alt="Logo" height="100%" style="padding-right: 3%;">
+    <span>WTech-Connect</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-button (click)="search()"><mat-icon>person_search</mat-icon>Search</button>
+      <button mat-button (click)="home()"><mat-icon>home</mat-icon>Home</button>
+      <button mat-button (click)="updates()"><mat-icon>notifications</mat-icon>Updates</button>
+      <button mat-button (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+    </div>
+  </mat-toolbar>
+  <div id="main">
+    <div id="skill">
+      <app-manage-skill></app-manage-skill>
+    </div>
+    <div id="location">
+      <app-manage-location></app-manage-location>
+    </div>
+    <div id="industry">
+      <app-manage-industry></app-manage-industry>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<app-leader-navbar></app-leader-navbar>
+<div id="main">
+  <div class="split-left">
+    <!--Loading at first to view All posts of all leaders  -->
+     <div *ngIf="all">
+       <app-leader-body></app-leader-body>
+     </div>
+     <!-- Loading when leader want to view a particular post in detail -->
+    <div *ngIf="!all && !follow && !filterPost">
+      <app-post-by-id-lead></app-post-by-id-lead>
+    </div>
+    <!-- Loading when leader want to view a particular user that follows it -->
+    <div *ngIf="!all && !post  && !filterPost">
+      <app-follower-by-id></app-follower-by-id>
+    </div>
+  </div>
+  <div id="profile" *ngIf="!display">
+    <h2><mat-icon>person</mat-icon>View your Profile?</h2>
+    <button mat-raised-button (click)="viewProfile()"  style="background-color:#E1BEE7; border-color: #E1BEE7;">View</button>
+ </div>
+ <div id="comp-render" class="split-right" *ngIf="display">
+  <button mat-raised-button (click)="display=!display"  style="background-color:#E1BEE7; border-color: #E1BEE7;">Close</button>
+  <app-view-profile-leader></app-view-profile-leader>
+ </div>
+</div>

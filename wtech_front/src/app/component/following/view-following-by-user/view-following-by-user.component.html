@@ -1,0 +1,24 @@
+<span style="display: flex;">
+    <button mat-raised-button (click)="goBack()" style="background-color:#E1BEE7; border-color: #E1BEE7; width: min-content; margin-right: 20%;"><mat-icon>arrow_back</mat-icon>Go Back</button>
+    <h2 style="text-align: center;">List of Leaders that User {{userName}} follow:)</h2>
+  </span>
+  <div id="main">
+    <div *ngFor="let lead of followings">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Name:</u></td>
+          <td><u>Email:</u></td>
+          <td><u>Contact No:</u></td>
+          <td><u>View</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{lead[3]}}</td>
+          <td>{{lead[2]}}</td>
+          <td>{{lead[1]}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewDetail(lead[0])"><mat-icon>info</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>
+  

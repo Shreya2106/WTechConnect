@@ -1,0 +1,15 @@
+<div id="main">
+    <h2 style="text-align: center;">Post:</h2>
+    <mat-card id="card">
+      <button mat-raised-button (click)="goBack()" style="background-color:#E1BEE7; border-color: #E1BEE7; width: min-content;"><mat-icon>arrow_back</mat-icon>Go Back</button>
+      <table>
+        <tr id="head"><u>Title:</u></tr><br>
+        <tr id="data">{{postObj.title}}</tr><br><br>
+        <tr id="head"><u>Description:</u></tr><br>
+        <tr id="data">{{postObj.desc}}</tr><br><br>
+        <tr id="head"><u>Created By Leader:</u></tr><br>
+        <tr id="data">{{postObj.createdBy}}</tr><br>
+      </table>
+    </mat-card>
+  </div>
+  

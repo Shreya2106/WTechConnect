@@ -1,0 +1,29 @@
+h2,h4{
+    color:#BA68C8;
+    font-family: 'Oleo Script', cursive;
+  }
+  #main{
+    display: flex;
+    width: 100%;
+  }
+  table{
+    background-color:rgb(201, 135, 245);
+    width: 100%;
+  }
+  td{
+    text-align: center;
+    width: 30%;
+  }
+  .split-right{
+    width: 40%;
+    align-content: flex-end;
+    margin-left: 5%;
+  }
+  #profile{
+    display: flex;
+  }
+  .split-left{
+    width: 100%;
+    align-content: center;
+  }
+  

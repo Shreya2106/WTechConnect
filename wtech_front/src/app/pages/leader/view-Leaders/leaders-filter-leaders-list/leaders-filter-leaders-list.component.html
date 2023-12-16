@@ -1,0 +1,19 @@
+<div id="main">
+    <div *ngFor="let lead of leaders">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Name:</u></td>
+          <td><u>Email:</u></td>
+          <td><u>Contact No:</u></td>
+          <td><u>View</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{lead['leaderName']}}</td>
+          <td>{{lead['email']}}</td>
+          <td>{{lead['contactNo']}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewDetail(lead['leaderId'])"><mat-icon>info</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>

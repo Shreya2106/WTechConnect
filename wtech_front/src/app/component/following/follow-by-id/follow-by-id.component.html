@@ -1,0 +1,37 @@
+<div id="main">
+    <h2 style="text-align: center;">Leader Details:</h2>
+    <mat-card id="card">
+      <button mat-raised-button (click)="goBack()" style="background-color:#E1BEE7; border-color: #E1BEE7; width: min-content;"><mat-icon>arrow_back</mat-icon>Go Back</button>
+      <table id="dataTable">
+        <tr>
+          <th><u>Name:</u></th>
+          <td>{{leadObj.leaderName}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Email:</u></th>
+          <td>{{leadObj.email}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Contact:</u></th>
+          <td>{{leadObj.contactNo}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Skill:</u></th>
+          <td>{{leadObj.skillId}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Industry:</u></th>
+          <td>{{leadObj.industryId}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Location:</u></th>
+          <td>{{leadObj.locationId}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Posts</u></th>
+          <td>Want to Check?<button mat-button type="submit" (click)="viewLeaderPost(leadObj.leaderId)" style="background-color:#E1BEE7; border-color: #E1BEE7;"><mat-icon>visibility</mat-icon>View</button></td>
+        </tr><br>
+      </table>
+    </mat-card>
+  </div>
+  

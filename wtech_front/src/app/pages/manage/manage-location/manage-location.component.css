@@ -1,0 +1,32 @@
+h4{
+    color:black;
+    font-family: 'Oleo Script', cursive;
+    text-align: center;
+    font-size: large;
+  }
+  #main{
+    text-align: center;
+  }
+  mat-card{
+    background-color: rgb(201, 135, 245);
+  }
+  #inner{
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #data{
+    color:white;
+  }
+  #add{
+    padding-left: 3%;
+    padding-bottom: 3%;
+  }
+  table{
+    margin-left: 15%;
+    border-collapse: collapse;
+    border-spacing: 15%;
+    font-size:medium;
+  }
+  

@@ -1,0 +1,51 @@
+<!-- Toolbar -->
+<mat-toolbar style="background-color: #E1BEE7;">
+    <img src="assets/cliparts/logo1.jpg" alt="Logo" height="100%" style="padding-right: 3%;">
+    <span>WTech-Connect</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-button (click)="home()"><mat-icon>home</mat-icon>Home</button>
+      <button mat-button (click)="updates()"><mat-icon>notifications</mat-icon>Updates</button>
+      <button mat-button (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+    </div>
+  </mat-toolbar>
+  
+  <!-- Body -->
+  <h2>List of Leaders in our System:)</h2>
+  
+  <!-- Filter Type -->
+  <span style="display: flex;">
+    <p>Filter:</p>
+    <select name="filter_opt" id="filter_opt" (change)="filter_req()">
+      <option value="Select">--Select--</option>
+      <option value="skill">Skill</option>
+      <option value="industry">Industry</option>
+      <option value="location">Location</option>
+    </select>
+    &nbsp;
+    <select *ngIf="filter" name="filter_val" id="filter_val" (change)="filter_done()">
+      <option value="Select">--Select--</option>
+      <option *ngFor="let d of data" value={{d.id}}>
+        {{d['name']}}
+      </option>
+    </select>
+  </span><br>
+  
+  
+  <div id="main">
+  
+    <!-- When filter is not done view all -->
+    <div *ngIf="!filterreq" class="split-left">
+      <app-leaders-list></app-leaders-list>
+    </div>
+  
+    <!-- If Filter is done then view by filter -->
+    <div *ngIf="filterreq" class="split-left">
+      <app-filter-leaders-list></app-filter-leaders-list>
+    </div>
+  
+    <!-- Leader Details By Id -->
+    <div class="split-right" *ngIf="display">
+      <app-leader-by-id></app-leader-by-id>
+    </div>
+  </div>

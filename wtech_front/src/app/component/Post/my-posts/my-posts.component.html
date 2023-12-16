@@ -1,0 +1,31 @@
+<div id="main">
+    <div class="split-left">
+    <div *ngFor="let post of postDetails">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Title</u></td>
+          <td><u>Description</u></td>
+          <td><u>View</u></td>
+          <td><u>Delete</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{post.title}}</td>
+          <td>{{post.desc}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewPost(post.id)"><mat-icon>info</mat-icon></button>
+          </td>
+          <td><button mat-button color="white" (click)="deletePost(post.id)"><mat-icon>delete</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+    </div>
+    <div class="split-right">
+    <div id="profile" *ngIf="!display">
+      <h4><mat-icon>person</mat-icon>Want to post something?</h4>
+      <button mat-raised-button (click)="addPostForm()"  style="background-color:#E1BEE7; border-color: #E1BEE7;">Add</button>
+   </div>
+   <div *ngIf="display">
+   <app-add-post></app-add-post>
+  </div>
+  </div>
+  </div>

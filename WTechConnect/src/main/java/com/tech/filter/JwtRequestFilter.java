@@ -1,0 +1,73 @@
+package com.tech.filter;
+
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.tech.services.CurrentUserDetailService;
+import com.tech.util.JwtUtil;
+
+import io.jsonwebtoken.ExpiredJwtException;
+
+@Component
+public class JwtRequestFilter extends OncePerRequestFilter{ 
+	//Since the request are synchronous the OncePerRequestFilter is used so that it is executed only once for a given request.
+
+	private static final Logger LOGGER=LoggerFactory.getLogger(JwtRequestFilter.class);
+	@Autowired
+	private CurrentUserDetailService userDetailsService;
+
+	@Autowired
+	private JwtUtil jwtUtil;
+
+	/*Validation of the token*/
+	@Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+
+        final String authorizationHeader = request.getHeader("Authorization");
+
+        String email = null;
+        String jwt = null;
+
+        //Every token starts with a bearer and the jwt token
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            jwt = authorizationHeader.substring(7);
+            try{
+            	email = jwtUtil.extractEmail(jwt);
+            }catch(ExpiredJwtException e) {
+            	LOGGER.info("********\n\nThe JWT token is expired!!");
+            }
+        }
+
+        /*Checking whether its been validated already or not*/
+        //SecurityContext is used to store the details of the currently authenticated user also known as a principle.
+        //getContext() returns an instance of the SecurityContext interface
+        if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+
+            UserDetails userDetails = this.userDetailsService.loadUserByUsername(email);
+            if (Boolean.TRUE.equals(jwtUtil.validateToken(jwt, userDetails))) {
+
+                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+                usernamePasswordAuthenticationToken
+                        .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+            }
+        }
+        chain.doFilter(request, response);
+    }
+}

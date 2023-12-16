@@ -1,0 +1,31 @@
+h2,h4{
+    color:#BA68C8;
+    font-family: 'Oleo Script', cursive;
+  }
+  h2{
+    font-size: xx-large;
+  }
+  h4{
+    font-size: large;
+  }
+  #dataTable{
+    margin-top: 2%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    border-collapse: collapse;
+    border-spacing: 15%;
+    width:80%;
+  }
+  th{
+    font-size: large;
+    color: aqua;
+    font-weight: normal;
+  }
+  
+  td{
+    font-size: medium;
+  }
+  #main{
+    margin-left: 10%;
+    width: 60%;
+  }

@@ -1,0 +1,23 @@
+h4{
+    color:#BA68C8;
+    font-family: 'Oleo Script', cursive;
+  }
+  h3{
+    color:black;
+    font-family: 'Oleo Script', cursive;
+    text-decoration: underline;
+  }
+  table{
+    background-color:rgb(201, 135, 245);
+    width: 100%;
+    text-align: center;
+  }
+  ::ng-deep.mat-card{
+    border-color: #E1BEE7;
+  }
+  span{
+    display: flex;
+    background-color: #E1BEE7;
+    color: aqua;
+  }
+  

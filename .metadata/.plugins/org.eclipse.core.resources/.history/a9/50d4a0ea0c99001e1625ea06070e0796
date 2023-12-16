@@ -1,0 +1,5 @@
+package com.tech.repository;
+
+public interface IndustryRepository {
+
+}

@@ -1,0 +1,30 @@
+#registerBox{
+    padding-bottom: 5%;
+    margin: 0 auto;
+    width: 100%;
+  }
+  #nav{
+    padding-left: 5%;
+    padding-top: 5%;
+    color: aqua;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 50px 0;
+  }
+  body{
+    background-color: rgb(231, 215, 242);
+    height: max-content;
+  }
+  h2,h4{
+    color:aqua;
+    font-family: 'Oleo Script', cursive;
+  }
+  h2{
+    font-size: xx-large;
+  }
+  mat-card{
+    border-radius: 20px;
+    width: 50%;
+  }
+  

@@ -1,0 +1,37 @@
+<div id="main">
+    <mat-card>
+      <div id="inner">
+      <h4><u>List Of Locations Present in our Directory</u></h4>
+      <span style="display: flex; padding-bottom: 5%;">
+        <button *ngIf="!add" mat-raised-button (click)="addfunc()">+Add</button>
+        <div *ngIf="add" id="add">
+        <form #loactionForm="ngForm" (ngSubmit)="addLocation()" fxLayout="row">
+          <input matInput type="text" name="loc" id="enterName" placeholder="Add Location Name" required [(ngModel)]="loc.name" required>
+            <button *ngIf="add" mat-raised-button type="submit" style="background-color:#E1BEE7; border-color: #E1BEE7;">Done</button>
+          </form>
+        </div>
+      </span>
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Name:</u></td>
+          <td><u>Edit:</u></td>
+          <td><u>Delete:</u></td>
+        </tr>
+        <tr *ngFor="let i of location" id="data">
+          <td *ngIf="i['id']!=eid">{{i['name']}}</td>
+          <td *ngIf="e && i['id']==eid">
+            <input type="text" [(ngModel)]="new_loc.name" style="width:100%"></td>
+          <td *ngIf="e && i['id']==eid">
+            <button mat-button color="primary" type="submit" (click)="editDone()"><mat-icon>published_with_changes</mat-icon></button>
+          </td>
+          <td *ngIf="i['id']!=eid">
+            <button mat-button color="white" (click)="edit(i['id'])"><mat-icon>edit</mat-icon></button>
+          </td>
+          <td>
+            <button mat-button color="white" (click)="del(i['id'])"><mat-icon>delete</mat-icon></button>
+          </td>
+        </tr>
+        </table><br>
+      </div>
+    </mat-card>
+  </div>

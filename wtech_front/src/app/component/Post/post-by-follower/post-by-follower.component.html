@@ -1,0 +1,24 @@
+<span style="display: flex;">
+    <button mat-raised-button (click)="goBack()" style="background-color:#E1BEE7; border-color: #E1BEE7; width: min-content; margin-right: 20%;"><mat-icon>arrow_back</mat-icon>Go Back</button>
+    <h2 style="text-align: center;">Posts of Leader {{leadName}}:)</h2>
+  </span>
+  <div id="main">
+    <div *ngFor="let post of postDetails">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Title</u></td>
+          <td><u>Description</u></td>
+          <td><u>Created By</u></td>
+          <td><u>View</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{post.title}}</td>
+          <td>{{post.desc}}</td>
+          <td>{{post.createdBy}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewPost(post.id)"><mat-icon>info</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>
+  

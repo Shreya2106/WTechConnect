@@ -1,0 +1,33 @@
+#loginBox{
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 3%;
+    width: 60%;
+  }
+  #imagetag{
+    background-color: rgb(192, 136, 244);
+    color: aqua;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    width: 45%;
+    border-radius: 20px;
+  }
+  #main{
+    padding-top: 5%;
+    width: 60%;
+    margin: 0 auto;
+  }
+  body{
+    background-color: rgb(231, 215, 242);
+    height: 100vh;
+  }
+  h2,h4{
+    color:aqua;
+    font-family: 'Oleo Script', cursive;
+  }
+  h2{
+    font-size: x-large;
+  }
+  mat-card{
+    border-radius: 20px;
+  }

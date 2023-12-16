@@ -1,0 +1,33 @@
+<div id="main">
+    <h2 style="text-align: center;">User Details:</h2>
+    <mat-card id="card">
+      <button mat-raised-button (click)="goBack()" style="background-color:#E1BEE7; border-color: #E1BEE7; width: min-content;"><mat-icon>arrow_back</mat-icon>Go Back</button>
+      <table id="dataTable">
+        <tr>
+          <th><u>Name:</u></th>
+          <td>{{userObj.name}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Email:</u></th>
+          <td>{{userObj.email}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Contact:</u></th>
+          <td>{{userObj.contactNo}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Skill:</u></th>
+          <td>{{userObj.skillId}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Industry:</u></th>
+          <td>{{userObj.industryId}}</td>
+        </tr><br>
+        <tr>
+          <th><u>Location:</u></th>
+          <td>{{userObj.locationId}}</td>
+        </tr><br>
+      </table>
+    </mat-card>
+  </div>
+  

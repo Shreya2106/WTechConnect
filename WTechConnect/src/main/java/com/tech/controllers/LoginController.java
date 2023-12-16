@@ -1,0 +1,80 @@
+package com.tech.controllers;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tech.exceptions.WrongCredentialException;
+import com.tech.model.JwtModel;
+import com.tech.model.LoginModel;
+import com.tech.util.JwtUtil;
+import com.tech.services.CurrentUserDetailService;
+
+@CrossOrigin("*")
+@RestController
+public class LoginController {
+	private static final Logger LOGGER=LoggerFactory.getLogger(LoginController.class);
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private JwtUtil jwtTokenUtil;
+
+	@Autowired
+	private CurrentUserDetailService userDetailsService;
+	/*Mapping for login*/
+	@PostMapping("/login")
+	public ResponseEntity<?> checkUser(@RequestBody LoginModel authenticationRequest) throws WrongCredentialException {
+		try {
+			authenticationManager.authenticate(
+					new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
+				);
+		}
+		//throwing a user defined exception on getting BadCredentialsException
+		catch (BadCredentialsException e) {
+			LOGGER.info("************\n\nWrongCredentialsException is thrown!!");
+			throw new WrongCredentialException("Bad Credentials!! Please enter valid details to login.");
+		}
+		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getEmail());
+		//Generating JWT token during login when the user credentials are valid
+		final String jwt = jwtTokenUtil.generateToken(userDetails);
+		LOGGER.info("*************\n\nSuccessfully Logged In!!");
+		return ResponseEntity.ok(new JwtModel(jwt));
+    }
+	/*Mapping to get current user*/
+	@RequestMapping(value="/currentUser")
+	public UserDetails getCurrentUser(){
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String email ="";
+		if(principal instanceof UserDetails) {
+				email = ((UserDetails)principal).getUsername(); //Object of CurrentUserDetails
+				LOGGER.info("*************\n\n{} is the current logged user",email);
+		}
+		else
+			email = principal.toString();
+		return userDetailsService.loadUserByUsername(email);
+	}
+	/** 
+	 * LOGOUT IMPLEMENTATION - REMAINING
+	 * JWT tokens being stateless and immutable they cannot be invalidated. 
+	 * They are self-contained. 
+	 * So for logout we can only create a blacklist of tokens after logout add the generated token to it.
+	 * Currently token expiration is set to 1hr
+	 * */
+	@RequestMapping(value="/logout")
+	public ResponseEntity<?> logout(){
+		LOGGER.info("*************\n\nSuccessfully Logged In!!");
+		return ResponseEntity.ok(new JwtModel("Logged Out!!"));
+	}
+}

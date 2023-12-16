@@ -1,0 +1,5 @@
+package com.tech.repositories;
+
+public interface FollowRepository {
+
+}

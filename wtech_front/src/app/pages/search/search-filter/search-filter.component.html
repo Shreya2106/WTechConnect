@@ -1,0 +1,17 @@
+<span style="display: flex;">
+    <p>Filter:</p>
+    <select name="filter_opt" id="filter_opt" (change)="filter_req()">
+      <option value="Select">--Select--</option>
+      <option value="skill">Skill</option>
+      <option value="industry">Industry</option>
+      <option value="location">Location</option>
+    </select>
+    &nbsp;
+    <select *ngIf="search.filter" name="filter_val" id="filter_val" (change)="filter_done()">
+      <option value="Select">--Select--</option>
+      <option *ngFor="let d of search.data" value={{d.id}}>
+        {{d['name']}}
+      </option>
+    </select>
+  </span><br>
+  

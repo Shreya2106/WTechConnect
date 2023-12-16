@@ -1,0 +1,7 @@
+
+h
+java:S3655$"7Call "Optional#isPresent()" before accessing the value.(„æäçùÿÿÿÿ8Èª÷Å1HµRMAJORZBUG
+`
+java:S2201!"/The return value of "orElseThrow" must be used.(Ê”ìışÿÿÿÿ8Èª÷Å1H¶RMAJORZBUG
+h
+java:S3655""7Call "Optional#isPresent()" before accessing the value.(³òùøÿÿÿÿ8Èª÷Å1H´RMAJORZBUG

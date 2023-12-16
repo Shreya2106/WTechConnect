@@ -1,0 +1,58 @@
+<div>
+    <mat-card style="padding-bottom: 2%">
+      <h3 style="padding-top: 25px;color:#BA68C8; font-size: 25px;font-family: 'Oleo Script', cursive;"fxLayoutAlign="center">Your Details</h3>
+      <table id="detailsTable">
+        <tr>
+          <td>Name:</td>
+          <td>{{user.name}}<button mat-button color="primary" (click)="nameEdit()"><mat-icon>edit_off</mat-icon></button></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{user.email}}<button mat-button color="primary" (click)="emailEdit()"><mat-icon>edit_off</mat-icon></button></td>
+        </tr>
+        <tr>
+          <td>Contact No.:</td>
+          <td *ngIf="!cEdit">{{user.contactNo}}<button mat-button color="primary" (click)="contactEdit()"><mat-icon>edit</mat-icon></button></td>
+          <td *ngIf="cEdit"><input [(ngModel)]="user.contactNo" matInput  required type="text" name="contactNo" id="contactNo" placeholder="Enter your Contact No">
+            <button mat-button color="primary" type="submit" (click)="contactUpdate()"><mat-icon>published_with_changes</mat-icon></button>
+          </td>
+        </tr>
+        <tr>
+          <td>Skill:</td>
+          <td *ngIf="!sEdit">{{user.skillId.name}}<button mat-button color="primary" (click)="skillEdit()"><mat-icon>edit</mat-icon></button></td>
+          <td *ngIf="sEdit">
+            <select [(ngModel)]="user.skillId" name="skill" required>
+              <option *ngFor="let skill of skills" [ngValue]="skill">
+                {{skill.name}}
+              </option>
+            </select>
+            <button mat-button color="primary" type="submit" (click)="skillUpdate()"><mat-icon>published_with_changes</mat-icon></button>
+          </td>
+        </tr>
+        <tr>
+          <td>Industry:</td>
+          <td *ngIf="!iEdit">{{user.industryId.name}}<button mat-button color="primary" (click)="indEdit()"><mat-icon>edit</mat-icon></button></td>
+          <td *ngIf="iEdit">
+            <select [(ngModel)]="user.industryId" name="industry" required>
+              <option *ngFor="let ind of industry" [ngValue]="ind">
+                {{ind.name}}
+              </option>
+            </select>
+            <button mat-button color="primary" type="submit" (click)="indUpdate()"><mat-icon>published_with_changes</mat-icon></button>
+          </td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td *ngIf="!lEdit">{{user.locationId.name}}<button mat-button color="primary" (click)="locEdit()"><mat-icon>edit</mat-icon></button></td>
+          <td *ngIf="lEdit">
+            <select [(ngModel)]="user.locationId" name="location" required>
+              <option *ngFor="let loc of location" [ngValue]="loc">
+                {{loc.name}}
+              </option>
+            </select>
+            <button mat-button color="primary" type="submit" (click)="locUpdate()"><mat-icon>published_with_changes</mat-icon></button>
+          </td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>

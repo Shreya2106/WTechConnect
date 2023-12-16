@@ -1,0 +1,60 @@
+
+a
+java:S14526"&Remove usage of generic wildcard type.(ðíÉÝþÿÿÿÿ8›ªò÷Å1H¶RCRITICALZ
+CODE_SMELL
+h
+java:S1854F"5Remove this useless assignment to local variable "n".(¦çýñ8›ªò÷Å1H·RMAJORZ
+CODE_SMELL
+a
+java:S1452="&Remove usage of generic wildcard type.(û‹€Öþÿÿÿÿ8›ªò÷Å1H¸RCRITICALZ
+CODE_SMELL
+Y
+java:S1481F"&Remove this unused "n" local variable.(¦çýñ8›ªò÷Å1H¹RMINORZ
+CODE_SMELL
+n	java:S125G"<This block of commented-out lines of code should be removed.(”Ï“8›ªò÷Å1H»RMAJORZ
+CODE_SMELL
+a
+java:S1452M"&Remove usage of generic wildcard type.(…Ü¨Ýøÿÿÿÿ8›ªò÷Å1H¼RCRITICALZ
+CODE_SMELL
+a
+java:S1452\"&Remove usage of generic wildcard type.(ÌÛœ·ÿÿÿÿÿ8›ªò÷Å1H½RCRITICALZ
+CODE_SMELL
+[
+java:S1452k"&Remove usage of generic wildcard type.(Ð›L8›ªò÷Å1H¾RCRITICALZ
+CODE_SMELL
+b
+java:S1452†"&Remove usage of generic wildcard type.(óÒº…úÿÿÿÿ8›ªò÷Å1H¿RCRITICALZ
+CODE_SMELL
+]
+java:S1452Œ"&Remove usage of generic wildcard type.(–§ÿî8›ªò÷Å1HÀRCRITICALZ
+CODE_SMELL
+b
+java:S1452“"&Remove usage of generic wildcard type.(®ª•Üøÿÿÿÿ8›ªò÷Å1HÁRCRITICALZ
+CODE_SMELL
+b
+java:S1452™"&Remove usage of generic wildcard type.(Ïý­çúÿÿÿÿ8›ªò÷Å1HÂRCRITICALZ
+CODE_SMELL
+b
+java:S1452Ÿ"&Remove usage of generic wildcard type.(œØúÿÿÿÿ8›ªò÷Å1HÃRCRITICALZ
+CODE_SMELL
+b
+java:S1452¦"&Remove usage of generic wildcard type.(Ïºáøÿÿÿÿ8›ªò÷Å1HÄRCRITICALZ
+CODE_SMELL
+b
+java:S1452¬"&Remove usage of generic wildcard type.(†Ââ½ÿÿÿÿÿ8›ªò÷Å1HÅRCRITICALZ
+CODE_SMELL
+b
+java:S1452²"&Remove usage of generic wildcard type.(¶º“‡ýÿÿÿÿ8›ªò÷Å1HÆRCRITICALZ
+CODE_SMELL
+]
+java:S1452¹"&Remove usage of generic wildcard type.(‡Œ…8›ªò÷Å1HÇRCRITICALZ
+CODE_SMELL
+b
+java:S1452¿"&Remove usage of generic wildcard type.(ë…ž€üÿÿÿÿ8›ªò÷Å1HÈRCRITICALZ
+CODE_SMELL
+]
+java:S1452Î"&Remove usage of generic wildcard type.(±Ñ©Å8›ªò÷Å1HÉRCRITICALZ
+CODE_SMELL
+b
+java:S1452Õ"&Remove usage of generic wildcard type.(æÞ®Éüÿÿÿÿ8›ªò÷Å1HÊRCRITICALZ
+CODE_SMELL

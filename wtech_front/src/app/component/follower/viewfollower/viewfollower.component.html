@@ -1,0 +1,21 @@
+<div id="main">
+    <h2>User that follow you:)</h2>
+    <div *ngFor="let user of followers">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Name:</u></td>
+          <td><u>Email:</u></td>
+          <td><u>Contact No:</u></td>
+          <td><u>View</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{user[3]}}</td>
+          <td>{{user[2]}}</td>
+          <td>{{user[1]}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewUser(user[0])"><mat-icon>info</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div id="main">
+    <h2>Women Leaders you follow:)</h2>
+    <div *ngFor="let lead of followings">
+      <table>
+        <tr style="color: aqua;">
+          <td><u>Name:</u></td>
+          <td><u>Email:</u></td>
+          <td><u>Contact No:</u></td>
+          <td><u>View</u></td>
+        </tr>
+        <tr style="color: white;">
+          <td>{{lead[3]}}</td>
+          <td>{{lead[2]}}</td>
+          <td>{{lead[1]}}</td>
+          <td><button mat-button color="white" type="submit" (click)="viewLeader(lead[0])"><mat-icon>info</mat-icon></button>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>

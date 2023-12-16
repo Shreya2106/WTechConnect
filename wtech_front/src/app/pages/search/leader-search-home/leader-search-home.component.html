@@ -1,0 +1,96 @@
+<!-- Toolbar -->
+<mat-toolbar style="background-color: #E1BEE7;">
+    <img src="assets/cliparts/logo1.jpg" alt="Logo" height="100%" style="padding-right: 3%;">
+    <span>WTech-Connect</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-button (click)="manage()"><mat-icon>manage_accounts</mat-icon>Manage</button>
+      <button mat-button (click)="home()"><mat-icon>home</mat-icon>Home</button>
+      <button mat-button (click)="updates()"><mat-icon>notifications</mat-icon>Updates</button>
+      <button mat-button (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+    </div>
+  </mat-toolbar>
+  
+  <!--**********************************MAIN CONTENT************************************** -->
+  <div *ngIf="!displayFollow && !displayFollowing && !displayPost &&!displayPostDetails">
+  <mat-tab-group>
+  <!-- *******LEADERS SEARCH********* -->
+    <mat-tab label="Leaders">
+      <h2>List of Leaders in our System:)</h2>
+      <!-- Filter Type -->
+      <app-search-filter></app-search-filter>
+  
+      <div id="main">
+        <!-- When filter is not done view all -->
+        <div *ngIf="!filterreq1" class="split-left">
+          <app-leaders-view-list></app-leaders-view-list>
+        </div>
+  
+        <!-- If Filter is done then view by filter -->
+        <div *ngIf="filterreq1" class="split-left">
+          <app-leaders-filter-leaders-list></app-leaders-filter-leaders-list>
+        </div>
+  
+        <!-- Leader Details By Id -->
+        <div class="split-right" *ngIf="display1">
+          <app-leaders-view-leader-by-id></app-leaders-view-leader-by-id>
+        </div>
+      </div>
+    </mat-tab>
+  
+  <!-- *******USERS SEARCH******** -->
+    <mat-tab label="Users">
+      <h2>List of Users in our System:)</h2>
+  
+      <!-- Filter Type -->
+      <app-search-filter></app-search-filter>
+      <div id="main">
+        <!-- When filter is not done view all -->
+        <div *ngIf="!filterreq1" class="split-left">
+          <app-view-user-list></app-view-user-list>
+        </div>
+  
+        <!-- If Filter is done then view by filter -->
+        <div *ngIf="filterreq1" class="split-left">
+          <app-filter-view-user></app-filter-view-user>
+        </div>
+  
+        <!-- User Details By Id -->
+        <div class="split-right" *ngIf="display2">
+          <app-view-user-by-id></app-view-user-by-id>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  </div>
+  
+  <!-- ****************LEADERS FOLLOWERS************************** -->
+  <div *ngIf="displayFollow" id="main" style="padding-top: 5%;">
+    <div class="split-left">
+      <app-view-follower-by-lead></app-view-follower-by-lead>
+    </div>
+    <div class="split-right" *ngIf="displayfollowerDetails">
+      <app-view-user-by-id></app-view-user-by-id>
+    </div>
+  </div>
+  
+  <!-- ****************LEADERS POSTS************************** -->
+  <div *ngIf="displayPost" id="main-post" style="padding-top: 5%;">
+    <app-post-by-follower></app-post-by-follower>
+  </div>
+  
+  <!-- ****************LEADERS POSTS DETAILS************************** -->
+  <div *ngIf="displayPostDetails" id="main-post" style="padding-top: 5%;">
+    <app-follower-post-by-id></app-follower-post-by-id>
+  </div>
+  
+  <!-- ****************USERS FOLLOWINGS************************** -->
+  <div *ngIf="displayFollowing" id="main" style="padding-top: 5%;">
+    <div class="split-left">
+      <app-view-following-by-user></app-view-following-by-user>
+    </div>
+    <div class="split-right" *ngIf="displayfollowingDetails">
+      <app-leaders-view-leader-by-id></app-leaders-view-leader-by-id>
+    </div>
+  </div>
+  
